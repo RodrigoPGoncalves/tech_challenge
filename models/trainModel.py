@@ -105,10 +105,6 @@ def preprocess_dataX(df, le_gender=None,le_interest=None,scaler=None):
         X_processed[others_cols] = df[others_cols]
 
     else:
-        le_gender = joblib.load(os.path.join(save_dir, 'le_gender.pkl'))
-        le_interest = joblib.load(os.path.join(save_dir, 'le_interest.pkl'))
-        scaler = joblib.load(os.path.join(save_dir, 'scaler.pkl'))
-    
         X_processed = pd.DataFrame()
 
         X_processed[categorical_cols[0]] = le_gender.fit_transform(df[categorical_cols[0]].values)
