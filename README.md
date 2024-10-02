@@ -1,0 +1,1 @@
+Para rodar utilize streamlit run .\app.py
